@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: beatsync-search
+  main:
+    banner-mode: log
+    web-application-type: REACTIVE
+  web:
+    resources:
+      add-mappings: false
+  r2dbc:
+    name: beatsync
+    url: r2dbc:pool:postgresql://localhost:5432/beatsync
+    username: beatsync
+    password: beatsync
+    properties:
+      preparedStatementCacheQueries: 0
+
+context:
+  initializer:
+    classes: com.beatsync.BeatSyncSearchInitializer
+
+server:
+  port: 8080
+
+management:
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: "*"
+    prometheus:
+      exposure:
+        include: "*"
+  health:
+    liveness-state:
+      enabled: true
+    readiness-state:
+      enabled: true
+
+endpoints:
+  prometheus:
+    enabled: true
+
+logging:
+  level:
+    root: INFO
+    org.javamoney.moneta: WARN
+  config: "classpath:${LOGGING_CONFIG_FILE:log4j2.xml}"

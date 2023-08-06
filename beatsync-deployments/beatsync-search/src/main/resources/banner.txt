@@ -1,0 +1,10 @@
+${AnsiColor.BRIGHT_GREEN}  ____             _   ____
+${AnsiColor.BRIGHT_GREEN} | __ )  ___  __ _| |_/ ___| _   _ _ __   ___
+${AnsiColor.BRIGHT_GREEN} |  _ \ / _ \/ _` | __\___ \| | | | '_ \ / __|
+${AnsiColor.BRIGHT_GREEN} | |_) |  __/ (_| | |_ ___) | |_| | | | | (__
+${AnsiColor.BRIGHT_GREEN} |____/ \___|\__,_|\__|____/ \__, |_| |_|\___|
+${AnsiColor.BRIGHT_GREEN}                             |___/
+
+${AnsiColor.BRIGHT_GREEN}BeatSync Search ${application.formatted-version}
+${AnsiColor.BRIGHT_GREEN}Running on Spring Boot ${spring-boot.formatted-version}
+

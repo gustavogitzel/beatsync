@@ -6,7 +6,7 @@ include(
 )
 
 include(
-
+    "beatsync-deployments:beatsync-search"
 )
 
 pluginManagement {

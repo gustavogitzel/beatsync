@@ -1,0 +1,17 @@
+version: '3.5'
+
+services:
+  postgres:
+    container_name: beatsync_pg
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: beatsync
+      POSTGRES_PASSWORD: beatsync
+      POSTGRES_DB: beatsync
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U beatsync" ]
+      interval: 2s
+      timeout: 3s
+      retries: 30
